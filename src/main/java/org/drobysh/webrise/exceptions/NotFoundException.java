@@ -1,4 +1,4 @@
-package org.drobysh.pixel.exceptions;
+package org.drobysh.webrise.exceptions;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

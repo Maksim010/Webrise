@@ -3,7 +3,7 @@ services:
     ports:
       - "5432:5432"
     image: postgres:latest
-    container_name: user-service_db
+    container_name: user-service_webRise_db
     environment:
       - POSTGRES_DB=user-service_db
       - POSTGRES_PASSWORD=postgres

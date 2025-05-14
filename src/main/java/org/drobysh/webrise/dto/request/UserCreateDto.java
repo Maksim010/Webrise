@@ -1,13 +1,12 @@
-package org.drobysh.webrise.dto;
+package org.drobysh.webrise.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.drobysh.webrise.dto.request.SubscriptionDto;
 
-import java.util.List;
+import java.time.LocalDate;
 
 @Builder
 @AllArgsConstructor
@@ -18,8 +17,8 @@ public class UserCreateDto {
 
     private String name;
 
-    private String password;
+    private LocalDate dateOfBirth;
 
-    private List<SubscriptionDto> subscriptions;
+    private String password;
 }
 

@@ -1,7 +1,7 @@
-package org.drobysh.pixel.exceptions;
+package org.drobysh.webrise.exceptions;
 
 public class BadRequestException extends RuntimeException {
-    public BadRequestException (String message) {
+    public BadRequestException(String message) {
         super(message);
     }
 }

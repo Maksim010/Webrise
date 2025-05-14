@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: UUID
+                  type: bigserial
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -17,10 +17,14 @@ databaseChangeLog:
                   type: varchar(500)
               - column:
                   name: user_id
-                  type: UUID
+                  type: bigserial
                   constraints:
-                    nullable: true
+                    nullable: false
                     foreignKeyName: fk_subscriptions_user
                     references: user(id)
+            constraints:
+              - uniqueConstraint:
+                  columnNames: user_id, name
+                  constraintName: uk_subscription_user_name
 
 

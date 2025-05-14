@@ -8,13 +8,20 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: UUID
+                  type: bigserial
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
                   name: name
                   type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_of_birth
+                  type: date
+                  constraints:
+                    nullable: false
               - column:
                   name: password
                   type: varchar(500)

@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: changelog/tables/users-table.yaml
+  - include:
+      file: changelog/tables/subscriptions-table.yaml

@@ -1,7 +1,12 @@
-package org.drobysh.webrise.exceptions;
+package org.drobysh.webrise.enums;
 
-public class IllegalArgumentException extends RuntimeException {
-    public IllegalArgumentException(String message) {
-        super(message);
-    }
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public enum IllegalArgumentExceptionMessage {
+
+    SUBSCRIPTION_EXISTS("Эта подписка уже оформлена");
+    private final String message;
 }

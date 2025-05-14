@@ -1,12 +1,11 @@
-package org.drobysh.pixel.exceptions.handler;
+package org.drobysh.webrise.exceptions.handler;
 
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
-import org.drobysh.pixel.dto.ErrorDto;
-import org.drobysh.pixel.exceptions.BadRequestException;
-import org.drobysh.pixel.exceptions.ForbiddenException;
-import org.drobysh.pixel.exceptions.InvalidJwtException;
-import org.drobysh.pixel.exceptions.NotFoundException;
+import org.drobysh.webrise.dto.response.ErrorDto;
+import org.drobysh.webrise.exceptions.BadRequestException;
+import org.drobysh.webrise.exceptions.IllegalArgumentException;
+import org.drobysh.webrise.exceptions.NotFoundException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -31,7 +30,6 @@ public class GlobalExceptionHandler {
             MethodArgumentNotValidException.class,
             ConstraintViolationException.class,
             IllegalArgumentException.class,
-            InvalidJwtException.class,
             EmptyResultDataAccessException.class,})
     public ErrorDto handleBadRequestException(Exception exception) {
         log.error(exception.getMessage(), exception);
@@ -43,13 +41,6 @@ public class GlobalExceptionHandler {
     public ErrorDto handleNotFoundException(Exception exception) {
         log.error(exception.getMessage(), exception);
         return getErrorDto(HttpStatus.NOT_FOUND,exception);
-    }
-
-    @ResponseStatus(HttpStatus.FORBIDDEN)
-    @ExceptionHandler({ForbiddenException.class})
-    public ErrorDto handleForbiddenException(Exception exception) {
-        log.error("handleForbiddenException - exception = {}", exception.getMessage());
-        return getErrorDto(HttpStatus.FORBIDDEN,exception);
     }
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

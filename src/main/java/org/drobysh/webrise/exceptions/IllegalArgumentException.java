@@ -1,7 +1,7 @@
 package org.drobysh.webrise.exceptions;
 
-public class BadRequestException extends RuntimeException {
-    public BadRequestException(String message) {
+public class IllegalArgumentException extends RuntimeException {
+    public IllegalArgumentException(String message) {
         super(message);
     }
 }
