@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-subscription-table
+      author: Maksim010
+      changes:
+        - createTable:
+            tableName: subscription
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(500)
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_subscriptions_user
+                    references: user(id)
+
+

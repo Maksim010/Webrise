@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-table
+      author: Maksim010
+      changes:
+        - createTable:
+            tableName: "user"
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(500)
+              - column:
+                  name: password
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+
